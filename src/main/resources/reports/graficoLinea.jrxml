@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="graficoLinea" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="de094b3c-8882-4f6f-b36b-ab363f21cc2c">
+
+	<parameter name="imgLogo" class="java.io.InputStream"/>
+
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="nombreEspecialidad" class="java.lang.String"/>
+	<field name="fechaConsulta" class="java.lang.String"/>
+	<field name="totalPacientes" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="79" backcolor="#1C3250" uuid="1692fb28-876b-4466-ad41-b637cf220dde"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="170" y="20" width="500" height="40" forecolor="#FFFFFF" uuid="cc02ee60-3f8a-422d-8024-37cbd1b9646c"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad de pacientes por especialidad]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="66" y="25" width="100" height="30" uuid="81b9c0d5-4917-40c9-a6f1-117279e87e0f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Especialidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="20" width="150" height="30" uuid="9eb16e28-3de9-48d0-8649-de89e648c2da"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad de pacientes]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="60" y="10" width="100" height="30" uuid="353e6b89-d045-44d5-aba7-31ffff32334e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEspecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="10" width="180" height="30" uuid="a651f85e-3c40-4156-a2d7-fabbe18c6154"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalPacientes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="10" width="100" height="30" uuid="c9d46af1-b1f8-47af-9ed5-47c8bdb69094"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="100" y="10" width="100" height="30" uuid="dc7eaafa-06c1-4531-b540-90b250a3ed9d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="10" width="100" height="30" uuid="78d14acc-c598-4822-8e67-d583df1eff20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="710" y="10" width="100" height="30" uuid="dd25c190-9f42-499f-95ca-3c65c9793f4f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="194" splitType="Stretch">
+			<lineChart>
+				<chart evaluationTime="Report">
+					<reportElement x="-10" y="2" width="802" height="190" uuid="742918eb-6a9d-46cf-860f-830351bae0d8"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{nombreEspecialidad}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{fechaConsulta}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{totalPacientes}]]></valueExpression>
+						<labelExpression><![CDATA[$F{nombreEspecialidad}]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="todosMedicos" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9f80dd0a-2196-495c-b4c2-b3b0d20bd65f">
+
+	<parameter name="imgLogo" class="java.io.InputStream"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+
+	<field name="nombreCompletoMedico" class="java.lang.String"/>
+	<field name="jvpm" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="79" backcolor="#1C3250" uuid="695b5099-bea5-40a0-873d-bd8468ddaed3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="280" y="20" width="244" height="30" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="371c001c-9ac8-4eab-af3d-fb359f25cdd0"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Listado de médicos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="700" y="17" width="50" height="50" uuid="b39d7013-520d-45c3-9f7c-27a01b9eacc3"/>
+				<imageExpression><![CDATA[$P{imgLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="70" y="20" width="100" height="30" uuid="a9f3fbdf-fc0e-408c-ae48-0fedd33c239f"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JVPM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="20" width="260" height="30" uuid="4fbc755c-38f7-44e2-a36b-d2d869b2e862"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Completo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="50" y="0" width="100" height="30" uuid="2cf75b95-2bbe-4329-a065-539ade229ee5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jvpm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="0" width="390" height="30" uuid="f4cb2bca-3a61-4909-936b-24ac4ead276e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCompletoMedico}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="10" width="100" height="30" uuid="4392155d-02dd-45b3-bbe0-7a1344cdd956"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="100" y="10" width="100" height="30" uuid="b742dfa4-5448-4cbb-9d54-83c1b6b39f80"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="10" width="100" height="30" uuid="a52e9eef-f99b-48fd-99d2-cc59358fbb26"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="702" y="10" width="100" height="30" uuid="946924a4-5a95-4e19-9bf3-b902c5cb0731"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pacientesRep" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a3e62087-69bc-4776-aff3-c33187cc549a">
+
+	<parameter name="imgLogo" class="java.io.InputStream"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+
+	<field name="identPaciente" class="java.lang.String"/>
+	<field name="nombreCompletoPaciente" class="java.lang.String"/>
+	<field name="telefonoPaciente" class="java.lang.String"/>
+	<field name="direccionPaciente" class="java.lang.String"/>
+	<field name="emailPaciente" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="128" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="0" width="842" height="128" backcolor="#1C3250" uuid="16b15a50-97bb-4a7f-8a18-6c975291ae92"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="20" y="20" width="380" height="30" forecolor="#FFFFFF" uuid="eb035a6c-533a-41ed-b8a2-9b137a930016"/>
+				<textElement>
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clínica Médica Bienestar Universitario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="60" width="280" height="50" forecolor="#FFFFFF" uuid="3052a389-a4c5-407d-968c-6c518355ec98"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Final avenida Cresencio Miranda contiguo a Cruz Roja]]></text>
+			</staticText>
+			<image>
+				<reportElement x="710" y="20" width="50" height="50" uuid="de6b05c1-f07d-4def-a7d5-0f4f54ff449f"/>
+				<imageExpression><![CDATA[$P{imgLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="360" y="10" width="220" height="30" uuid="a20f18e6-75b6-42ba-9d61-7753fe1d7526"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de pacientes]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="20" width="100" height="30" uuid="114892ad-56da-4ead-bae3-cacddfc4d8d7"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Identificación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="20" width="100" height="30" uuid="4cd1e53a-fcfa-455d-a03e-c56369a29729"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="20" width="100" height="30" uuid="777b219d-6479-41d8-bc7d-2000af24e323"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="20" width="100" height="30" uuid="51dd97e3-50a1-4673-94b6-fdbc7745342b"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-mail]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="620" y="20" width="100" height="30" uuid="5cfb0aba-63d5-48a6-81d6-d8822ef5a692"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="100" height="30" uuid="f3f00518-a8e0-4439-ad8d-5dee4d45af80"/>
+				<textFieldExpression><![CDATA[$F{identPaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="10" width="100" height="30" uuid="736bb580-8999-48d0-9023-2e2617a111fe"/>
+				<textFieldExpression><![CDATA[$F{nombreCompletoPaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="10" width="100" height="30" uuid="4aff4ac1-fb50-4a83-abf4-47138210e3c5"/>
+				<textFieldExpression><![CDATA[$F{telefonoPaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="10" width="100" height="30" uuid="6a6bacf7-e24b-4c37-b599-151d1ce02330"/>
+				<textFieldExpression><![CDATA[$F{emailPaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="620" y="10" width="100" height="30" uuid="90755f56-e583-453f-943e-fae9234a7320"/>
+				<textFieldExpression><![CDATA[$F{direccionPaciente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="11" y="7" width="100" height="30" uuid="356ca37c-966a-440e-8432-d63e1d014c4a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="160" y="7" width="100" height="30" uuid="60b9eb31-ca62-4f74-832c-6d86b931e26d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="12" width="100" height="30" uuid="dafc2783-cfb0-41f8-be8c-f4606660884e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="710" y="12" width="100" height="30" uuid="ebeffa26-a551-49a2-94ea-2c3df04c9ed2"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

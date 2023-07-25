@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="consultaMedicaPorEspecialidadCE" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0ad35e66-802a-4ff4-9d92-b2b0fec58d80">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterClinica.jrdax"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="horaConsulta" class="java.lang.String"/>
+	<field name="fechaConsulta" class="java.lang.String"/>
+	<field name="numConsultorio" class="java.lang.String"/>
+	<field name="nombreEspecialidad" class="java.lang.String"/>
+	<field name="nombreCompletoMedico" class="java.lang.String"/>
+	<field name="nombreCompletoPaciente" class="java.lang.String"/>
+
+	<group name="nombre_especiadad">
+		<groupExpression><![CDATA[$F{nombreEspecialidad}]]></groupExpression>
+	</group>
+	<group name="Group_EspecialidadMedica">
+		<groupExpression><![CDATA[$F{nombreEspecialidad}]]></groupExpression>
+		<groupHeader>
+			<band height="88">
+				<staticText>
+					<reportElement x="10" y="0" width="100" height="30" uuid="f22d1c54-0cb1-4d02-a429-348d45b7f55d"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[EspecialidadMedica:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="120" y="0" width="170" height="30" uuid="1baa19ac-cc84-43d2-981a-9b7b3b141b39"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nombreEspecialidad}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="10" y="50" width="80" height="30" uuid="c0a7d3dc-44a3-46a5-aaa8-68e1c1966eb1"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Medico]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="165" y="50" width="80" height="30" uuid="306043e1-657a-4057-b755-c20b53841a61"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Paciente]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="300" y="50" width="80" height="30" uuid="c7630b99-d6ac-492e-bd09-b15e5f44f54b"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[No.Cons]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="420" y="50" width="80" height="30" uuid="c60bbd2a-68f8-4618-94fd-d4a30df99a97"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fecha]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="520" y="50" width="80" height="30" uuid="b11d493e-7250-485d-bbfd-9171d9e1dc25"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Hora]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="24" width="420" height="30" forecolor="#282978" uuid="352bc89e-7fd3-4ebc-983d-4990664c5fb6"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLINICA MEDICA BIENESTAR UNIVERSITARIO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="240" y="8" width="390" height="30" uuid="01c9dc50-46e2-4ce2-9992-4885aff0351c"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de consulta medicas por especialidad]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="84" splitType="Stretch">
+			<textField>
+				<reportElement x="290" y="0" width="100" height="30" uuid="f326fc01-16d7-434b-85dd-dde3ed8a3557"/>
+				<textFieldExpression><![CDATA[$F{numConsultorio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="100" height="30" uuid="ceed06d0-dd6c-47ee-b29e-2336323ba0bf"/>
+				<textFieldExpression><![CDATA[$F{fechaConsulta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="0" width="150" height="30" uuid="b1706fa8-831f-4960-bac4-45d36ce9ecee"/>
+				<textFieldExpression><![CDATA[$F{nombreCompletoMedico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="0" width="100" height="30" uuid="9ce12e47-8d44-43a7-b27e-4cc5cba2f3da"/>
+				<textFieldExpression><![CDATA[$F{nombreCompletoPaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="0" width="100" height="30" uuid="f7abf85d-1737-41e5-8715-a9e319e8ca6f"/>
+				<textFieldExpression><![CDATA[$F{horaConsulta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="51" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="100" height="30" uuid="c9856939-19cb-40b3-b4f1-1d46cae38e4b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="630" y="10" width="100" height="30" uuid="421c79b6-552a-4b9b-9f80-486377fff4c2"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="145" y="0" width="100" height="30" uuid="1704bacc-2faf-4893-8493-a5472df40f95"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
